@@ -1,0 +1,142 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: #FAFEFF;
+  }
+/* main menu bar */
+
+.menuUl{
+  display: flex;
+
+}
+.menuUl li{
+    margin-right: 20px;
+    list-style-type: none;
+    font-size: 14px;
+}
+.menuUl li.current-menu-item{
+  color: red;
+}
+.menuUl li.has-dropdown::after {
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menuUl li.has-dropdown.current-menu-item::after {
+   
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-plus-lg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/></svg>');
+
+}
+.menuUl li.has-dropdown:hover::after {        
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash" viewBox="0 0 16 16"><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/></svg>');
+        background-size: contain;
+        background-repeat: no-repeat; 
+        transition: .3s; 
+}
+
+.menuUl li:hover{        
+  color: red; 
+}
+.menuUl li.has-dropdown{
+ position: relative;
+    
+}
+.menuUl li.has-dropdown ul{        
+   position: absolute;
+   opacity: 0;
+    visibility: hidden;
+    transform-origin: top;
+    min-width: 250px;
+    background: #FFFFFF;
+    z-index: 999;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 0 10px rgba(136, 136, 136, .10);
+    padding-right: 0;
+  }
+  .menuUl li.has-dropdown:hover ul{
+    opacity: 1;
+    visibility: visible;   
+       
+   }
+   .menuUl li.has-dropdown ul li{
+    color: black;
+     padding: 12px; 
+     border-bottom:1px solid #e6e6e6 ;   
+   }
+   .menuUl li.has-dropdown ul li:hover{
+    color: red;
+    padding-left: 20px;    
+  }
+
+  /* social section */
+ #assignmentFooter .assignmentFooter{
+  padding: 90px 0px;
+  text-align: center;
+  background-color: #BB6DF7;
+ }
+ #assignmentFooter .assignmentFooter .socialIcon{
+  margin-top: 25px;
+ }
+ #assignmentFooter .assignmentFooter i {
+ margin-bottom: 20px;
+  height: 40px;
+  width: 40px;
+  background-color: #FFFFFF;
+  line-height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: transform 0.3s ease; /* Smooth transition for the lift effect */
+}
+#assignmentFooter .assignmentFooter i:hover{
+  padding-bottom: 20px;
+  transition: all linear 0.3s;
+  background-color: #ad0606; 
+  transform: translateY(-5px); /* Moves the icon up by 5px on hover */   
+}
+
+
+#menu-footer-menu{ 
+  justify-content: center;
+  color: white;
+  padding-top: 8px;
+}
+
+.footer_copyright{  background-color: #BB6DF7;
+ 
+}
+.footer_copyright .coustom{
+  border-top: 1px solid white; 
+}
+.footer_copyright .coustom p{
+ color: white;
+}
+.footer_copyright .coustom p a {
+  position: relative; /* Positioning context for the pseudo-element */
+  text-decoration: none; /* Remove default underline */
+  color: inherit; /* Inherit text color from parent */
+}
+
+.footer_copyright .coustom p a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px; /* Adjust height for border thickness */
+  background-color: currentColor; /* Use the same color as text */
+  transition: width 0.3s ease; /* Smooth transition */
+}
+
+.footer_copyright .coustom p a:hover::after {
+  width: 100%; /* Full width on hover */
+}
